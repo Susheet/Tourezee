@@ -1,0 +1,92 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: white;
+
+
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+h1{
+
+  font-size: 3rem;
+}
+
+.logo
+{
+
+  font-family: 'Odibee Sans', cursive;
+}
+
+.form-container
+{
+  border: 1px solid;
+  margin-left: 150px;
+  border-radius: 10%;
+  padding: 30px 40px;
+
+}
+
+.nav{
+  padding-bottom:5px;
+  margin-bottom: 35px;
+}
+.navbar-brand
+{
+  padding-left: 10px;
+}
+
+.banner
+{ width:70%;
+  border:inset 1px;
+  border-radius:5%;
+}
+
+h3
+{
+  font-family: 'Pompiere', cursive;
+  padding:1px;
+  line-height:1rem;
+}
