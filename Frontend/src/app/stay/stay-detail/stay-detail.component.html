@@ -1,0 +1,137 @@
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" 
+    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://kit.fontawesome.com/108c5f3aed.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald&family=Stint+Ultra+Condensed&family=Ubuntu:ital,wght@1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="details">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="name">{{hotel.Name}}</h1>
+                <span class="category">{{hotel.Category}}</span>
+                <span style="font-size: 20px;"><i *ngFor="let i of Arr(num).fill(1)" class="fas fa-star" style="color:goldenrod;"></i></span>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 mainImg">
+                    <img src="https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/itemimages/27/87/2787766_v1.jpeg" alt="No">
+                </div>
+                <div class="col-sm-2">
+                    <img class="sideImages" src="https://q-xx.bstatic.com/images/hotel/max1024x768/218/218452014.jpg" alt="">
+                    <img class="sideImages" src="https://r1imghtlak.mmtcdn.com/a3d0e190d05811e9b4620242ac110008.jpg?&output-quality=75&downsize=520:350&crop=520:350;49,0&output-format=jpg" alt="">
+                    <img class="sideImages" src="https://static.toiimg.com/photo/81047785.cms" alt="">
+                </div>
+                <div class="col-sm-5">
+                    <span><i class="fas fa-map-marker-alt"></i></span>
+                    <span class="location" style="font-size: 18px; font-weight: bold;">{{hotel.Location}}--{{hotel.City}}</span>
+                    <h3 class="location" style="font-size: 18px; font-weight: bold;">{{hotel.Country}}</h3>
+                    <div class="distance">
+                        <div class="dist">
+                            <span style="margin-right: 10px;"><i class="fas fa-city"></i></span>
+                            <span style="font-size: 18px; font-weight: bold;"><span>Distance from city centre :</span>{{hotel["Distance from city center (km)"]}}</span>
+                        </div>
+                        <div class="dist">
+                            <span style="margin-right: 10px;"><i class="fas fa-plane"></i></span>
+                            <span style="font-size: 18px; font-weight: bold;"><span>Distance from airport: </span>{{hotel["Distance from airport (km)"]}}</span>
+                        </div>
+                        <div class="dist">
+                            <span style="margin-right: 10px;"><i class="fas fa-solid fa-hospital"></i></span>
+                            <span style="font-size: 18px; font-weight: bold;"><span>Distance from hospital:</span>{{hotel["Distance from hospital (km)"]}}</span>
+                        </div>
+                        <div class="dist">
+                            <span style="margin-right: 10px;"><i class="fas fa-subway"></i></span>
+                            <span style="font-size: 18px; font-weight: bold;"><span>Distance from metro :</span>{{hotel["Distance from metro (km)"]}}</span>
+                        </div>
+                    </div>
+                    <div class="description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+                         mollit anim id est laborum.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-6">
+                 <h3 style="font-size: 24px; font-weight: bold;">Similar Hotels</h3>  
+                 <app-stay-recommend
+                 [hotelName]="hotel.Name"
+                 [hotelCountry]="hotel.Country"
+                 [hotelCity]="hotel.City">  
+                 </app-stay-recommend>
+               </div>
+               <div class="col-sm-6">
+                 <div class="row">
+                     <div class="col-sm-12 rooms">
+                            <div class="row" style="padding: 10px;">
+                                <div class="col-sm-3 mt-1"><img class="img-fluid img-responsive rounded hotel-image" 
+                                    src="https://i.pinimg.com/originals/b7/48/98/b74898796fd9073ebd85ca9a6ce9d8b7.jpg"></div>
+                                <div class="col-sm-5 mt-1">
+                                  <h2> Luxury Double Room with Garden View</h2>
+                                    <h3>1 double bed </h3>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="">
+                                        <h4 class=""><i class="fas fa-rupee-sign"></i> {{hotel["Avg Cost per person per night"]}}</h4><span class="strike-text"></span>
+                                        <div class="">
+                                            <div style="margin-bottom: 10px;">
+                                                <button class="btn btn-success btn-sm" type="button">Book</button>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                           </div>
+                     </div>
+                     <div class="col-sm-6 prefernces" style="text-align: center;">
+                        <h2 style="font-weight: bold;">Prefernces</h2>
+                        <div class="row">
+                          <div class="col-sm-12 pref">
+                             <span><i class="large material-icons">child_friendly </i></span>
+                             <span style="font-size: 18px;">Baby Friendly</span>
+                          </div>
+                          <div class="col-sm-12 pref">
+                             <span><i class="large material-icons">local_parking  </i></span> 
+                             <span style="font-size: 18px;">Parking</span>
+                          </div>
+                          <div class="col-sm-12 pref">
+                             <span><i class="large material-icons">smoke_free </i></span>
+                             <span style="font-size: 18px;">Smoke Free </span>
+                          </div>
+                          <div class="col-sm-12 pref">
+                             <span><i class="large material-icons">pets </i></span>
+                             <span style="font-size: 18px;">Pet Friendly </span>
+                          </div>
+                        </div>  
+                     </div>
+                     <div class="col-sm-6 prefernces">
+                        <h2 style="font-weight: bold;text-align: center;">Facilities</h2>
+                        <div class="row">
+                           <div class="col-sm-12 pref">
+                              <span><i class="large material-icons">free_breakfast</i></span>
+                              <span  style="font-size: 18px;">Complimentary Breakfast </span>
+                           </div>
+                           <div class="col-sm-12 pref">
+                              <span><i class="large material-icons">ac_unit</i></span> 
+                              <span style="font-size: 18px;">Air Conditioning</span>
+                           </div>
+                           <div class="col-sm-12 pref">
+                              <span><i class="large material-icons">tap_and_play </i></span>
+                              <span style="font-size: 18px;">Free Wi-Fi</span>
+                           </div>
+                           <div class="col-sm-12 pref">
+                              <span><i class="large material-icons">local_laundry_service  </i></span>
+                              <span style="font-size: 18px;">Laundry</span>
+                           </div>
+                         </div>
+                     </div>
+                 </div>
+               </div>
+            </div>
+        </div>
+    </section>
+</body>
+                

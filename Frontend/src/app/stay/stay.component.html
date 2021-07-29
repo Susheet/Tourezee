@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <div *ngIf="selectedHotel">
+        <div class="backButton">
+            <button class="btn btn-light" type="button" (click)="goBack()"><i class="fas fa-arrow-left"></i>Back</button>
+        </div>
+    </div>
+    <app-stay-detail
+      *ngIf="selectedHotel; else infoText"
+      [hotel]="selectedHotel"></app-stay-detail>
+    <ng-template #infoText>
+        <div class="row">
+            <div class="col-sm-12">
+                <app-stay-list></app-stay-list>
+            </div>
+        </div>
+    </ng-template>
+</div>
+

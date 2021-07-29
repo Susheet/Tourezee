@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "tourezee-94aaa": {
+      "hosting": {
+        "tourezee": [
+          "tourezee-94aaa"
+        ]
+      }
+    }
+  }
+}

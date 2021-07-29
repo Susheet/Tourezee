@@ -1,0 +1,35 @@
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" 
+    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://kit.fontawesome.com/108c5f3aed.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+<div class="light">
+    <main class="container py-2">
+  
+      <article class="postcard light blue">
+        <a class="postcard__img_link">
+          <img class="postcard__img" src="https://a0.muscache.com/im/pictures/49ff089b-ea42-4afd-a666-a71df00e40d9.jpg?im_w=1680" alt="Image Title" />
+        </a>
+        <div class="postcard__text t-dark lolz">
+          <h1 class="postcard__title blue"><a href="#">{{hotel.Name}}</a></h1>
+          <h3><i class="fas fa-map-marker-alt"></i>{{hotel.City}}</h3>
+          <div class="ratings mr-3"></div><span>Customers Rating: <b>{{hotel.Rating}}</b></span>
+          <div class="stars mr-2"></div><span><b><i *ngFor="let i of Arr(num).fill(1)" class="fas fa-star" style="color:goldenrod;"></i></b></span>
+          <h3 class="mr-1"><i class="fas fa-rupee-sign"></i>{{hotel["Avg Cost per person per night"]}}</h3><span class="strike-text"></span>
+          <h3 class="mr-1"><i class="fas fa-utensils"></i> Resturant Available: {{hotel.Restaurant}}  </h3><span class="strike-text"></span>
+          <h3 class="mr-1"><i class="fas fa-dumbbell"></i> Gym Available: {{hotel.Gym}}</h3><span class="strike-text"></span>
+          <div class="postcard__bar"></div>
+          <ul class="postcard__tagbox">
+            <li class="tag__item"><i class="fas fa-tag mr-2"></i><button class="btn btn-outline-dark download-button" type="button" (click)="onDetails()">Details</button></li>
+            <li class="tag__item"><i class="fas fa-clock mr-2"></i>Save for Later</li>
+            <li class="tag__item play blue">
+              <a href="#"><i class="fas fa-rupee-sign"></i> Book Now</a>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </main>
+  </div>
+

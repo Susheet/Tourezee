@@ -1,0 +1,66 @@
+body{
+    margin-top: 0px;
+    padding-top: 20px;
+    background-color: #f5f5f0;
+    height: 100%;
+}
+.details{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.name{
+    font-size: 40px;
+    font-weight: bold;
+    color:black;
+    font-family: 'Oswald', sans-serif;
+}
+.description{
+    font-size: 14px;
+}
+.category{
+    margin-right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Stint Ultra Condensed', cursive;
+}
+.sideImages{
+    width: 200px;
+    height: 115px;
+    margin: 5px;
+}
+.mainImg img{
+    width: 450px;
+    height:350px
+}
+.icon{
+    color: black;
+}
+.rooms{
+    padding: 20px;
+    margin-top: 20px;
+}
+.location {
+    font-size: 18px;
+    margin: 10px;
+}
+.distance{
+
+    padding: 10px;
+    border-radius: 5%;
+}
+.dist{
+    margin-bottom: 5px;
+}
+.prefernces{
+    padding: 50px;
+    text-align: center;
+}
+.pref{
+    background-color: #99b3ff;
+    text-align: center;
+    margin: 0 auto;
+    margin: 3px;
+    border-radius: 10%;
+    width:fit-content;
+    height:fit-content;
+}   

@@ -1,0 +1,165 @@
+
+<html>
+
+  <head>
+    <link rel="stylesheet" href="stay-list.component.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,800" rel="stylesheet" />
+  
+  </head>
+  <body>
+    <div *ngIf="option; else infoText">
+    <div class="cody">
+  
+      <div class="s004">
+        <form>
+          <fieldset>
+            <legend>WHAT ARE YOU LOOKING FOR?</legend>
+            <div class="row">
+              <div class="inner-form col-sm-8">
+                <div class="input-field">
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control searchBar" type="text" placeholder="Place to Search" #placeInput>
+                    <button class="btn btn-outline-success" style="font-size: 14px;"  type="button" (click)="onSearch()">Search</button>
+                  </form>
+                </div>
+              </div>
+              <div class="col-sm-2" style="text-align: left; font-size: 14px; font-weight: bold;">
+                <button class="btn btn-outline-dark download-button btn-lg" type="button" (click)="onGetHotels()">Hotels</button>
+              </div>
+              <div class="col-sm-2" style="text-align: left; font-size: 14px; font-weight: bold;">
+                <button class="btn btn-outline-dark download-button btn-lg" type="button" (click)="onGetAttractions()">Attractions</button>
+               </div>
+            </div>
+             <div class="col-sm-12" style="padding-bottom: 20px; font-size: 18px; font-style: italic;">
+              <div *ngIf="isHotel"><span><i class="fas fa-search"></i></span>Results for <span> {{persona}} </span> Hotels in {{place}}</div>
+              <div *ngIf="isAttraction"><span><i class="fas fa-search"></i></span>Results for <span>{{persona}}</span> Attractions of {{place}}</div>
+            </div>
+            <div class="suggestion-wrap">
+              <span><button class="btn btn-outline-dark download-button" type="button"
+                  (click)="getBusinessHotels()">BUSINESS</button></span>
+              <span><button class="btn btn-outline-dark download-button" type="button"
+                  (click)="getMedicalHotels()">MEDICAL</button></span>
+              <span><button class="btn btn-outline-dark download-button" type="button"
+                  (click)="getStudentHotels()">STUDENT</button></span>
+              <span><button class="btn btn-outline-dark download-button" type="button"
+                  (click)="getTouristHotels()">TOURIST</button></span>
+            </div> 
+          </fieldset>
+  
+        </form>
+      </div>
+
+    <div class="myfilter">
+      <div class="container">
+        <ul class="ks-cboxtags">
+          <li><input type="checkbox" id="checkboxOne" value="Hotels"><label for="checkboxOne">Hotels</label></li>
+          <li><input type="checkbox" id="checkboxTwo" value="Cotton Candy" checked><label
+              for="checkboxTwo">Resorts</label></li>
+          <li><input type="checkbox" id="checkboxThree" value="5 Star" checked><label for="checkboxThree">5 Star</label>
+          </li>
+
+          <li><input type="checkbox" id="checkboxFour" value="cab service"><label for="checkboxFour">cab service</label>
+          </li>
+          <li><input type="checkbox" id="checkboxFive" value="free wifi"><label for="checkboxFive">free wifi</label></li>
+          <li><input type="checkbox" id="checkboxSix" value="BabyFriendly" checked><label for="checkboxSix">Baby
+              Friendly
+            </label></li>
+          <li><input type="checkbox" id="checkboxSeven" value="Wheelchair Friendly"><label for="checkboxSeven">Wheelchair
+              Friendly</label></li>
+          <li><input type="checkbox" id="checkboxEight" value="Pet Friendly"><label for="checkboxEight">Pet
+              Friendly</label></li>
+          <li><input type="checkbox" id="checkboxNine" value="Smoke Free"><label for="checkboxNine">Smoke Free
+            </label></li>
+          <li><input type="checkbox" id="checkboxTen" value="Parking"><label for="checkboxTen">Parking</label></li>
+          <li class="ks-selected"><input type="checkbox" id="24/7 Helpdesk" value="Discord"><label
+              for="checkboxEleven">24/7 Helpdesk</label></li>
+          <li><input type="checkbox" id="checkboxTwelve" value="Laundry"><label for="checkboxTwelve">Laundry</label></li>
+          <li><input type="checkbox" id="checkboxThirteen" value="House"><label for="checkboxThirteen">House
+              keeping
+            </label></li>
+          <li><input type="checkbox" id="checkboxFourteen" value="Room"><label for="checkboxFourteen">Room
+              Service</label></li>
+          <li><input type="checkbox" id="checkboxFifteen" value="Resturant"><label for="checkboxFifteen">Resturant</label>
+          </li>
+        </ul>
+      </div>
+    </div>
+      </div>
+      <div class ="loki">
+        <app-stay-item *ngFor="let hotelEl of hotels" [hotel]="hotelEl">
+        </app-stay-item>
+    </div>
+    </div>
+    <ng-template #infoText>
+      <div class="cody">
+  
+        <div class="s004">
+          <form>
+            <fieldset>
+              <legend>WHAT ARE YOU LOOKING FOR?</legend>
+              <div class="row">
+                <div class="inner-form col-sm-8">
+                  <div class="input-field">
+                    <form class="form-inline my-2 my-lg-0">
+                      <input class="form-control searchBar" type="text" placeholder="Place to Search" #placeInput>
+                      <button class="btn btn-outline-success" style="font-size: 14px;"  type="button" (click)="onSearch()">Search</button>
+                    </form>
+                  </div>
+                </div>
+                <div class="col-sm-2" style="text-align: left; font-size: 14px; font-weight: bold;">
+                  <button class="btn btn-outline-dark download-button btn-lg" type="button" (click)="onGetHotels()">Hotels</button>
+                </div>
+                <div class="col-sm-2" style="text-align: left; font-size: 14px; font-weight: bold;">
+                  <button class="btn btn-outline-dark download-button btn-lg" type="button" (click)="onGetAttractions()">Attractions</button>
+                 </div>
+              </div>
+               <div class="col-sm-12" style="padding-bottom: 20px; font-size: 18px; font-style: italic;">
+                <div *ngIf="isHotel"><span><i class="fas fa-search"></i></span>Results for <span> {{persona}} </span> Hotels in {{place}}</div>
+                <div *ngIf="isAttraction"><span><i class="fas fa-search"></i></span>Results for <span>{{persona}}</span> Attractions of {{place}}</div>
+              </div>
+              <div class="suggestion-wrap">
+                <span><button class="btn btn-outline-dark download-button" type="button"
+                    (click)="getAttractionsBusiness()">BUSINESS</button></span>
+                <span><button class="btn btn-outline-dark download-button" type="button"
+                    (click)="getAttractionsMedical()">MEDICAL</button></span>
+                <span><button class="btn btn-outline-dark download-button" type="button"
+                    (click)="getAttractionsStudent()">STUDENT</button></span>
+                <span><button class="btn btn-outline-dark download-button" type="button"
+                    (click)="getAttractionsTourist()">TOURIST</button></span>
+              </div> 
+            </fieldset>
+    
+          </form>
+        </div>
+
+      <div class="myfilter">
+        <div class="container">
+          <ul class="ks-cboxtags">
+            <li><button class="btn  btn-sm attractionFilter" type="button" (click)="getAttractionsNature()">Nature</button></li>
+            <li><button class="btn  btn-sm attractionFilter" type="button" (click)="getAttractionsGolfCourse()">Golf Course</button></li>
+            <li><button class="btn  btn-sm attractionFilter" type="button" (click)="getAttractionsBeach()">Beach</button></li>
+            <li><button class="btn  btn-sm attractionFilter" type="button" (click)="getAttractionsRestaurant()">Restaurants</button></li>
+            <li><button class="btn  btn-sm attractionFilter" type="button" (click)="getAttractionsMuseum()">Museum</button></li>
+            <li><button class="btn  btn-sm attractionFilter" type="button" (click)="getAttractionsAdventure()">Adventure</button></li>
+            <li><button class="btn  btn-sm attractionFilter" type="button" (click)="getAttractionsReligious()">Religious</button></li>
+            <li><button class="btn  btn-sm attractionFilter" type="button" (click)="getAttractionsShopping()">Shopping</button></li>
+            <li><button class="btn  btn-sm attractionFilter" type="button" (click)="getAttractionsExpo()">Expo</button></li>
+            <li><button class="btn  btn-sm attractionFilter" type="button" (click)="getAttractionsIsland()">Island</button></li>
+            <li><button class="btn  btn-sm attractionFilter" type="button" (click)="getAttractionsSightseeing()">Sightseeing</button></li>
+          </ul>
+        </div>
+      </div>
+        </div>
+        <div class ="loki">
+          <app-attraction-item
+        *ngFor="let attractionEl of attractions"
+        [attraction]="attractionEl">
+        </app-attraction-item>
+      </div> 
+    </ng-template>
+  </body>
+</html>
